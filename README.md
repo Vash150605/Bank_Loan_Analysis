@@ -1,69 +1,24 @@
-# Retail Bank Loan Risk Analysis
+# Retail Bank Loan Default Analysis
 
-**A comprehensive data analysis project for predicting and understanding loan defaults using Python, SQL, and Tableau.**
+## 📌 Project Overview
+This project analyzes a dataset of 3,500 historical bank loans to identify the key drivers of loan defaults. The goal of this analysis is to provide actionable insights to the loan approval team to minimize financial risk. 
 
-## 📋 Project Overview
+## 🛠️ Tech Stack Used
+* **Microsoft Excel:** Initial data inspection and anomaly detection.
+* **Python (Pandas, Matplotlib, Seaborn):** Data cleaning (handling missing values, correcting formatting anomalies) and Exploratory Data Analysis (EDA).
+* **PostgreSQL:** Data storage and querying to extract high-level business metrics.
+* **Tableau:** Building an interactive, professional executive dashboard.
 
-This project analyzes a dataset of **3,500 loan applications** from a retail bank to identify key risk factors for loan defaults. It includes data cleaning, exploratory analysis, SQL-based reporting, and an interactive Tableau dashboard for business stakeholders.
+## 💡 Key Business Insights
+* **Insight 1:** Borrowers who rent their homes have a significantly higher default rate compared to those who own a mortgage.
+* **Insight 2:** *(Add an insight here based on your Loan Intent bar chart - e.g., Medical loans showed the highest risk).*
+* **Insight 3:** *(Add an insight regarding interest rates or income).*
 
-**Goal**: Help the bank make better lending decisions by understanding default patterns and visualizing risk metrics.
-
-
-## 📊 Dataset
-
-- **Source**: `raw_loan_data.csv`
-- **Rows**: 3,500
-- **Columns**: 9
-
-### Features
-
-| Column                    | Type     | Description |
-|--------------------------|----------|-----------|
-| `Loan_ID`                | int      | Unique loan identifier |
-| `Age`                    | int      | Age of applicant |
-| `Income`                 | float    | Annual income (some missing values) |
-| `Employment_Length_Years`| int      | Years employed (-1 values cleaned) |
-| `Home_Ownership`         | string   | RENT, MORTGAGE, OWN |
-| `Loan_Intent`            | string   | MEDICAL, EDUCATION, etc. |
-| `Loan_Amount`            | float    | Requested loan amount |
-| `Interest_Rate`          | float    | Interest rate on loan |
-| `Loan_Status`            | int      | **Target**: 1 = Default, 0 = No Default |
-
-## 🛠️ Data Processing Steps
-
-1. **Loading** raw CSV data
-2. **Missing Values**: Filled `Income` with median
-3. **Data Quality**: Replaced negative `Employment_Length_Years` (-1) with 0
-4. **Export**: Saved cleaned dataset as `cleaned_loan_data.csv`
-
-## 🔍 Key Analyses
-
-### SQL Queries (in `SQL_Query_File.sql`)
-
-- **Overall Default Rate**
-- **Default Rate by Home Ownership** (ranked)
-
-### Python Notebook Highlights (`loan_analysis.ipynb`)
-
-- Descriptive statistics
-- Interest rate distribution by default status (boxplot)
-- Data validation and cleaning
-
-### Tableau Dashboard
-
-Interactive visualizations including:
-- Default rates by home ownership and loan intent
-- Risk profiles by age, income, loan amount
-- Key performance indicators (KPIs)
-
-## 🚀 How to Run
-
-### Prerequisites
-- Python 3.x with pandas, numpy, matplotlib, seaborn
-- Tableau Desktop (for .twbx file)
-- SQLite / PostgreSQL / any SQL engine
-
-### Python Setup
-```bash
-pip install pandas numpy matplotlib seaborn jupyter
-jupyter notebook notebooks/loan_analysis.ipynb
+## 📂 Repository Structure
+* `loan_analysis.ipynb`: The Jupyter notebook containing all Python cleaning and EDA code.
+* `SQL_Query_File.sql`: The SQL scripts used to aggregate default rates.
+* `raw_loan_data.csv`: The original, uncleaned dataset.
+* `cleaned_loan_data.csv`: The final dataset used for the Tableau dashboard.
+* `Loan_Analysis_Dashboard.twbx`: The Tableau sheets and dashboard.
+* `Dashboard.png`: The Image of the Dashboard.
+* `Documentation.docx`: Documentation of this Project.
